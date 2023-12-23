@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="card my-5 p-2">
+    <div class="card-title">
+      <h2>Mes Réservations</h2>
+    </div>
+    <p>Nombre de réservations :
+      <span class="custom-font">
+        <%= @user_bookings.count %>
+      </span>
+    </p>
+
+       <% booking_count = 0 %>
+      <% @user_bookings.each do |booking| %>
+
+        <div class="card-info">
+          <h3>Réservation # <%= booking_count += 1 %></h3>
+          <p>Nom de la chambre : <%= booking.room.name %></p>
+          <p>Prix Total :
+            <span class="custom-font">
+              <%= booking.total_price.to_i %>€
+            </span>
+          </p>
+        <%= link_to 'Voir la réservation', room_booking_path(booking.room, booking), class: 'btn-usual' %>
+        </div>
+      <% end %>
+    </div>
+
+
+  </div>

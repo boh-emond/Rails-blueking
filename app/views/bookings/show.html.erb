@@ -1,0 +1,23 @@
+
+<div class="container">
+  <div class="card my-5 p-5">
+    <div class="card-title">
+      <h1>Détails de la réservation</h1>
+    </div>
+    <div class="card-info">
+      <p>Débute le
+      <span class="custom-font">
+        <%= @booking.starts_at.strftime('%Y-%m-%d') %></p>
+      </span>
+      <p>Fini le <span class="custom-font">
+        <%= @booking.ends_at.strftime('%Y-%m-%d') %></p>
+      </span>
+      <p> <%= @booking.user.email %></p>
+      <p> Prix total de la réservation:
+        <span class="custom-font">
+          <%= @booking.total_price.to_i %>€</p>
+        </span>
+      <%= link_to "Mes Réservations", room_bookings_path, class: "btn-usual" %>
+    </div>
+  </div>
+</div>

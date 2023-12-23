@@ -1,0 +1,37 @@
+<div class="container" data-controller="total-price">
+
+  <div class="card my-2">
+
+    <div class="card-title">
+      <h2 class="my-4 p-3">Nom : <%= @room.name %></h2>
+    </div>
+
+    <div class="card-info">
+      <p>Hotel : <%= @room.hotel.name %> </p>
+      <p>Capacité : <%= @room.capacity %> <%= @room.capacity > 1 ? 'personnes' : 'personne' %></p>
+      <p>Prix par nuit : <span class="custom-font">
+      <%= @room.price_per_night.to_i %>€</p>
+      </span>
+      <p class="price-per-day d-none"><%= @room.price_per_night.to_i %></p>
+    </div>
+  </div>
+
+    <p>
+      <button class="btn-usual" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Réserver cette chambre
+      </button>
+    </p>
+    <div class="collapse" id="collapseExample"  data-controller= "datepicker">
+      <div class="card-body form-container">
+        <%= render 'bookings/form' %>
+      </div>
+       <div class="line">
+        <h3  class="price-per-day">Total Price</h3>
+          <h4 class="custom-font" data-value = "days" data-total-price-target= "total" ></h4>
+      </div>
+</div>
+    </div>
+
+    <%= link_to 'Retour à la liste des chambres', rooms_path, class:"btn-back my-3" %>
+
+</div>

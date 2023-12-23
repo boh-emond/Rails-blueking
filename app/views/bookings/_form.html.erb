@@ -1,0 +1,9 @@
+
+<div class="container">
+  <%= simple_form_for [@room, @booking] do |f| %>
+    <%= f.input :starts_at, label: "Dates", as: :string, input_html: { data: {datepicker_target: "startDateInput"}} %>
+    <%= f.input :ends_at, label: false, as: :string, input_html: { data: { datepicker_target: "endDateInput", total_price_target: "endDateInput"} }%>
+    <%= f.button :submit, 'Réserver', class:"btn-usual" %>
+  <% end %>
+
+</div>

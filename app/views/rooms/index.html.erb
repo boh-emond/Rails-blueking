@@ -1,0 +1,51 @@
+<div class="container">
+
+    <div class="title">
+      <h1><%= @rooms.count %> chambres disponibles</h1>
+    </div>
+  <div class="second-container">
+
+    <% @rooms.each do |room| %>
+      <div class="card my-2 p-2">
+        <div class="card-info">
+          <div class="card-title">
+            <h3> <%= room.name %></h3>
+          </div>
+          <p> <%= room.hotel.name %></p>
+          <p> Prix: <%= room.price_per_night.to_i %>€</p>
+          <p> <%= room.hotel.address %></p>
+          <div class="fixed">
+            <%= link_to "Voir la chambre", room_path(room), class:"btn-usual" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="my-3">
+      <%= link_to 'Back to Home', root_path, class:"btn-usual" %>
+    </div>
+  </div>
+</div>
+
+
+<%#
+  <% @hotels.each do |hotel| %>
+    <%# <div class="card my-2 p-2">
+      <div class="card-title"> %>
+        <%# <h3><%= #hotel.name %>
+        <%# </h3> %>
+      <%# </div> %>
+        <%# hotel.rooms.each do |room| %>
+        <%# <div class="card-info"> %>
+          <%# <p><%=# room.name %>
+          <%# </p> %>
+          <%# <p>Capacité de la chambre: <%=# room.capacity %>
+          <%# </p>
+          <p>Prix: <%=# room.price_per_night %>
+          <%# </p>
+          <p><%= #link_to "Voir la chambre", room_path(room) %>
+          <%# </p>
+        </div> %>
+        <%# end %>
+    <%# </div> %>
+  <%# end  %>

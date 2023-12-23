@@ -1,0 +1,29 @@
+.btn-back {
+  position : fixed;
+  top: 15%;
+  right: 10%;
+  background-color: #264644;
+  border-radius: 2px;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.btn-back:hover {
+  color: #264644;
+  background-color: white;
+}
+
+.btn-usual {
+  background-color: #264644;
+  border-radius: 4px;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  width:fit-content;
+}
+
+.btn-usual:hover {
+  color: #264644;
+  background-color: white;
+}
